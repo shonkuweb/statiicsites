@@ -314,6 +314,11 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+    header {
+        justify-content: space-between;
+        /* Ensure space between items */
+    }
+
     .about-content {
         grid-template-columns: 1fr;
     }
@@ -324,34 +329,68 @@ footer {
 
     .menu-toggle {
         display: block;
+        order: 1;
+        /* Move to first position */
+        z-index: 1001;
+        /* Ensure above the nav drawer */
+    }
+
+    .logo {
+        order: 2;
+        /* Move to second position */
+        margin-left: auto;
+        /* Push to right if needed, or centering logic */
+        margin-right: auto;
+    }
+
+    /* Ensure the logo text container doesn't break layout */
+    .logo span {
+        text-align: right;
     }
 
     nav {
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 0;
         left: 0;
-        width: 100%;
-        background: rgba(13, 27, 42, 0.95);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        transform: translateY(-200%);
-        /* Start hidden above */
-        transition: transform 0.3s ease-in-out;
+        width: 70%;
+        /* Side drawer width */
+        max-width: 300px;
+        height: 100vh;
+        background: rgba(13, 27, 42, 0.98);
+        backdrop-filter: blur(15px);
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        transform: translateX(-100%);
+        /* Start hidden to the left */
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 999;
+        display: flex;
+        align-items: center;
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
     }
 
     nav.active {
-        transform: translateY(0);
+        transform: translateX(0);
     }
 
     nav ul {
         flex-direction: column;
-        align-items: center;
-        padding: 2rem 0;
-        gap: 1.5rem;
+        align-items: flex-start;
+        /* Align text to left */
+        padding: 4rem 2rem;
+        gap: 2rem;
+        width: 100%;
     }
 
     nav a {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding-bottom: 1rem;
+    }
+
+    nav a:hover {
+        padding-left: 10px;
+        /* Slide effect on hover */
     }
 }
