@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arthur Pendelton | Senior Legal Advocate</title>
+    <meta name="description"
+        content="Portfolio of Arthur Pendelton, a senior legal advocate specializing in corporate and criminal law.">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="portfolio.css">
+    <!-- Icons (using Font Awesome via CDN for demo purposes) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="#" class="logo">Pendelton <span
+                style="color:white; font-size:0.5em; display:block; line-height:1; letter-spacing: 3px;">Law
+                Firm</span></a>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#practice">Practice Areas</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>
+                <span>Justice. Integrity. Excellence.</span>
+                Defending Your Rights With Unwavering Dedication
+            </h1>
+            <p>Providing top-tier legal representation for high-stakes cases. When your reputation and future are on the
+                line, accept nothing less than the best.</p>
+            <a href="#contact" class="btn">Schedule Consultation</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-content">
+            <div class="about-image"></div>
+            <div class="about-text">
+                <div class="section-title" style="text-align: left; margin-bottom: 2rem;">
+                    <h2 style="color: var(--primary-color);">About Arthur Pendelton</h2>
+                </div>
+                <p style="margin-bottom: 1rem;">With over two decades of experience in the courtroom, Arthur Pendelton
+                    has established himself as a formidable force in legal advocacy. Graduating top of his class from
+                    Harvard Law, he has dedicated his career to ensuring justice is served.</p>
+                <p>His approach combines rigorous legal analysis with a compelling narrative style that resonates with
+                    judges and juries alike. Whether navigating complex corporate mergers or defending against serious
+                    allegations, Arthur brings a level of strategic insight that is unmatched.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="practice" class="areas">
+        <div class="section-title">
+            <h2>Practice Areas</h2>
+        </div>
+        <div class="areas-grid">
+            <div class="area-card">
+                <div class="area-icon"><i class="fas fa-gavel"></i></div>
+                <h3>Criminal Defense</h3>
+                <p>Aggressive representation for those facing serious criminal charges. We investigate every angle to
+                    protect your freedom.</p>
+            </div>
+            <div class="area-card">
+                <div class="area-icon"><i class="fas fa-landmark"></i></div>
+                <h3>Corporate Law</h3>
+                <p>Strategic counsel for businesses navigating complex regulatory environments, mergers, and high-value
+                    litigation.</p>
+            </div>
+            <div class="area-card">
+                <div class="area-icon"><i class="fas fa-scale-balanced"></i></div>
+                <h3>Civil Litigation</h3>
+                <p>Resolving disputes with efficiency and precision. We fight for your interests in contract, property,
+                    and tort cases.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            <p style="color: #aab6c2;">For a confidential consultation, please contact my office.</p>
+
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Briefly describe your legal matter..." required></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="btn">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Pendelton Law Firm. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple form handling (demo)
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for contacting us. We will get back to you shortly.');
+        });
+    </script>
+</body>
+
+</html>
