@@ -116,6 +116,7 @@
         </div>
     </section>
 
+    <div class="menu-overlay"></div>
     <footer>
         <p>&copy; 2024 Pendelton Law Firm. All Rights Reserved.</p>
     </footer>
@@ -127,7 +128,9 @@
 
         menuToggle.addEventListener('click', () => {
             nav.classList.toggle('active');
-            // Optional: Toggle icon between bars and times
+            document.querySelector('.menu-overlay').classList.toggle('active');
+
+            // Toggle icon
             const icon = menuToggle.querySelector('i');
             if (nav.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
@@ -142,10 +145,22 @@
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', () => {
                 nav.classList.remove('active');
+                document.querySelector('.menu-overlay').classList.remove('active');
+
                 const icon = menuToggle.querySelector('i');
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
             });
+        });
+
+        // Close menu when clicking overlay
+        document.querySelector('.menu-overlay').addEventListener('click', () => {
+            nav.classList.remove('active');
+            document.querySelector('.menu-overlay').classList.remove('active');
+
+            const icon = menuToggle.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
         });
 
         // Smooth scrolling
